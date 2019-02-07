@@ -1,0 +1,34 @@
+repositories {
+  maven {
+    url "https://maven-central.storage-download.googleapis.com/repos/central/data/"
+  }
+}
+
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+//   dependencies {
+//     classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.8'
+//   }
+}
+
+apply plugin: 'java'
+//apply plugin: 'com.google.protobuf'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+dependencies {
+  compile 'io.grpc:grpc-netty-shaded:1.18.0'
+  compile 'io.grpc:grpc-protobuf:1.18.0'
+  compile 'io.grpc:grpc-stub:1.18.0'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+    }
+}
