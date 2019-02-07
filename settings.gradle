@@ -1,1 +1,1 @@
-include 'service'
+rootProject.name = 'service'
