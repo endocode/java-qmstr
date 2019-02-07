@@ -1,6 +1,5 @@
 package org.qmstr.util;
 
-import javax.xml.bind.DatatypeConverter;
 import java.io.*;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
