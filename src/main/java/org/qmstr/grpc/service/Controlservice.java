@@ -6081,7 +6081,7 @@ public final class Controlservice {
       "\001(\t\"2\n\014EventMessage\022\"\n\005class\030\001 \001(\0162\023.ser" +
       "vice.EventClass\"\035\n\rExportRequest\022\014\n\004wait" +
       "\030\001 \001(\010\"!\n\016ExportResponse\022\017\n\007success\030\001 \001(" +
-      "\0102\203\004\n\016ControlService\0222\n\003Log\022\023.service.Lo" +
+      "\0102\316\004\n\016ControlService\0222\n\003Log\022\023.service.Lo" +
       "gMessage\032\024.service.LogResponse\"\000\0225\n\004Quit" +
       "\022\024.service.QuitMessage\032\025.service.QuitRes" +
       "ponse\"\000\022J\n\013SwitchPhase\022\033.service.SwitchP" +
@@ -6089,12 +6089,14 @@ public final class Controlservice {
       "e\"\000\022A\n\016GetPackageNode\022\027.service.PackageR" +
       "equest\032\024.service.PackageNode\"\000\0227\n\013GetFil" +
       "eNode\022\021.service.FileNode\032\021.service.FileN" +
-      "ode\"\0000\001\022;\n\006Status\022\026.service.StatusMessag" +
-      "e\032\027.service.StatusResponse\"\000\022<\n\017Subscrib" +
-      "eEvents\022\025.service.EventMessage\032\016.service" +
-      ".Event\"\0000\001\022C\n\016ExportSnapshot\022\026.service.E" +
-      "xportRequest\032\027.service.ExportResponse\"\000B" +
-      "\030\n\026org.qmstr.grpc.serviceX\000b\006proto3"
+      "ode\"\0000\001\022I\n\021GetDiagnosticNode\022\027.service.D" +
+      "iagnosticNode\032\027.service.DiagnosticNode\"\000" +
+      "0\001\022;\n\006Status\022\026.service.StatusMessage\032\027.s" +
+      "ervice.StatusResponse\"\000\022<\n\017SubscribeEven" +
+      "ts\022\025.service.EventMessage\032\016.service.Even" +
+      "t\"\0000\001\022C\n\016ExportSnapshot\022\026.service.Export" +
+      "Request\032\027.service.ExportResponse\"\000B\030\n\026or" +
+      "g.qmstr.grpc.serviceX\000b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

@@ -187,6 +187,38 @@ public final class ControlServiceGrpc {
      return getGetFileNodeMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<org.qmstr.grpc.service.Datamodel.DiagnosticNode,
+      org.qmstr.grpc.service.Datamodel.DiagnosticNode> getGetDiagnosticNodeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetDiagnosticNode",
+      requestType = org.qmstr.grpc.service.Datamodel.DiagnosticNode.class,
+      responseType = org.qmstr.grpc.service.Datamodel.DiagnosticNode.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<org.qmstr.grpc.service.Datamodel.DiagnosticNode,
+      org.qmstr.grpc.service.Datamodel.DiagnosticNode> getGetDiagnosticNodeMethod() {
+    io.grpc.MethodDescriptor<org.qmstr.grpc.service.Datamodel.DiagnosticNode, org.qmstr.grpc.service.Datamodel.DiagnosticNode> getGetDiagnosticNodeMethod;
+    if ((getGetDiagnosticNodeMethod = ControlServiceGrpc.getGetDiagnosticNodeMethod) == null) {
+      synchronized (ControlServiceGrpc.class) {
+        if ((getGetDiagnosticNodeMethod = ControlServiceGrpc.getGetDiagnosticNodeMethod) == null) {
+          ControlServiceGrpc.getGetDiagnosticNodeMethod = getGetDiagnosticNodeMethod = 
+              io.grpc.MethodDescriptor.<org.qmstr.grpc.service.Datamodel.DiagnosticNode, org.qmstr.grpc.service.Datamodel.DiagnosticNode>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "service.ControlService", "GetDiagnosticNode"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.qmstr.grpc.service.Datamodel.DiagnosticNode.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.qmstr.grpc.service.Datamodel.DiagnosticNode.getDefaultInstance()))
+                  .setSchemaDescriptor(new ControlServiceMethodDescriptorSupplier("GetDiagnosticNode"))
+                  .build();
+          }
+        }
+     }
+     return getGetDiagnosticNodeMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<org.qmstr.grpc.service.Controlservice.StatusMessage,
       org.qmstr.grpc.service.Controlservice.StatusResponse> getStatusMethod;
 
@@ -347,6 +379,13 @@ public final class ControlServiceGrpc {
 
     /**
      */
+    public void getDiagnosticNode(org.qmstr.grpc.service.Datamodel.DiagnosticNode request,
+        io.grpc.stub.StreamObserver<org.qmstr.grpc.service.Datamodel.DiagnosticNode> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetDiagnosticNodeMethod(), responseObserver);
+    }
+
+    /**
+     */
     public void status(org.qmstr.grpc.service.Controlservice.StatusMessage request,
         io.grpc.stub.StreamObserver<org.qmstr.grpc.service.Controlservice.StatusResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getStatusMethod(), responseObserver);
@@ -403,6 +442,13 @@ public final class ControlServiceGrpc {
                 org.qmstr.grpc.service.Datamodel.FileNode,
                 org.qmstr.grpc.service.Datamodel.FileNode>(
                   this, METHODID_GET_FILE_NODE)))
+          .addMethod(
+            getGetDiagnosticNodeMethod(),
+            asyncServerStreamingCall(
+              new MethodHandlers<
+                org.qmstr.grpc.service.Datamodel.DiagnosticNode,
+                org.qmstr.grpc.service.Datamodel.DiagnosticNode>(
+                  this, METHODID_GET_DIAGNOSTIC_NODE)))
           .addMethod(
             getStatusMethod(),
             asyncUnaryCall(
@@ -488,6 +534,14 @@ public final class ControlServiceGrpc {
 
     /**
      */
+    public void getDiagnosticNode(org.qmstr.grpc.service.Datamodel.DiagnosticNode request,
+        io.grpc.stub.StreamObserver<org.qmstr.grpc.service.Datamodel.DiagnosticNode> responseObserver) {
+      asyncServerStreamingCall(
+          getChannel().newCall(getGetDiagnosticNodeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
     public void status(org.qmstr.grpc.service.Controlservice.StatusMessage request,
         io.grpc.stub.StreamObserver<org.qmstr.grpc.service.Controlservice.StatusResponse> responseObserver) {
       asyncUnaryCall(
@@ -563,6 +617,14 @@ public final class ControlServiceGrpc {
         org.qmstr.grpc.service.Datamodel.FileNode request) {
       return blockingServerStreamingCall(
           getChannel(), getGetFileNodeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public java.util.Iterator<org.qmstr.grpc.service.Datamodel.DiagnosticNode> getDiagnosticNode(
+        org.qmstr.grpc.service.Datamodel.DiagnosticNode request) {
+      return blockingServerStreamingCall(
+          getChannel(), getGetDiagnosticNodeMethod(), getCallOptions(), request);
     }
 
     /**
@@ -660,9 +722,10 @@ public final class ControlServiceGrpc {
   private static final int METHODID_SWITCH_PHASE = 2;
   private static final int METHODID_GET_PACKAGE_NODE = 3;
   private static final int METHODID_GET_FILE_NODE = 4;
-  private static final int METHODID_STATUS = 5;
-  private static final int METHODID_SUBSCRIBE_EVENTS = 6;
-  private static final int METHODID_EXPORT_SNAPSHOT = 7;
+  private static final int METHODID_GET_DIAGNOSTIC_NODE = 5;
+  private static final int METHODID_STATUS = 6;
+  private static final int METHODID_SUBSCRIBE_EVENTS = 7;
+  private static final int METHODID_EXPORT_SNAPSHOT = 8;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -700,6 +763,10 @@ public final class ControlServiceGrpc {
         case METHODID_GET_FILE_NODE:
           serviceImpl.getFileNode((org.qmstr.grpc.service.Datamodel.FileNode) request,
               (io.grpc.stub.StreamObserver<org.qmstr.grpc.service.Datamodel.FileNode>) responseObserver);
+          break;
+        case METHODID_GET_DIAGNOSTIC_NODE:
+          serviceImpl.getDiagnosticNode((org.qmstr.grpc.service.Datamodel.DiagnosticNode) request,
+              (io.grpc.stub.StreamObserver<org.qmstr.grpc.service.Datamodel.DiagnosticNode>) responseObserver);
           break;
         case METHODID_STATUS:
           serviceImpl.status((org.qmstr.grpc.service.Controlservice.StatusMessage) request,
@@ -779,6 +846,7 @@ public final class ControlServiceGrpc {
               .addMethod(getSwitchPhaseMethod())
               .addMethod(getGetPackageNodeMethod())
               .addMethod(getGetFileNodeMethod())
+              .addMethod(getGetDiagnosticNodeMethod())
               .addMethod(getStatusMethod())
               .addMethod(getSubscribeEventsMethod())
               .addMethod(getExportSnapshotMethod())
