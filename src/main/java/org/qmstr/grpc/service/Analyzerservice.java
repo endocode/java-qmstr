@@ -3807,6 +3807,789 @@ public final class Analyzerservice {
 
   }
 
+  public interface DiagnosticNodeMessageOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:service.DiagnosticNodeMessage)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int64 token = 1;</code>
+     */
+    long getToken();
+
+    /**
+     * <code>string uid = 2;</code>
+     */
+    java.lang.String getUid();
+    /**
+     * <code>string uid = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getUidBytes();
+
+    /**
+     * <code>.service.DiagnosticNode diagnosticnode = 3;</code>
+     */
+    boolean hasDiagnosticnode();
+    /**
+     * <code>.service.DiagnosticNode diagnosticnode = 3;</code>
+     */
+    org.qmstr.grpc.service.Datamodel.DiagnosticNode getDiagnosticnode();
+    /**
+     * <code>.service.DiagnosticNode diagnosticnode = 3;</code>
+     */
+    org.qmstr.grpc.service.Datamodel.DiagnosticNodeOrBuilder getDiagnosticnodeOrBuilder();
+  }
+  /**
+   * Protobuf type {@code service.DiagnosticNodeMessage}
+   */
+  public  static final class DiagnosticNodeMessage extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:service.DiagnosticNodeMessage)
+      DiagnosticNodeMessageOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DiagnosticNodeMessage.newBuilder() to construct.
+    private DiagnosticNodeMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DiagnosticNodeMessage() {
+      token_ = 0L;
+      uid_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DiagnosticNodeMessage(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+
+              token_ = input.readInt64();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              uid_ = s;
+              break;
+            }
+            case 26: {
+              org.qmstr.grpc.service.Datamodel.DiagnosticNode.Builder subBuilder = null;
+              if (diagnosticnode_ != null) {
+                subBuilder = diagnosticnode_.toBuilder();
+              }
+              diagnosticnode_ = input.readMessage(org.qmstr.grpc.service.Datamodel.DiagnosticNode.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(diagnosticnode_);
+                diagnosticnode_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.qmstr.grpc.service.Analyzerservice.internal_static_service_DiagnosticNodeMessage_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.qmstr.grpc.service.Analyzerservice.internal_static_service_DiagnosticNodeMessage_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.qmstr.grpc.service.Analyzerservice.DiagnosticNodeMessage.class, org.qmstr.grpc.service.Analyzerservice.DiagnosticNodeMessage.Builder.class);
+    }
+
+    public static final int TOKEN_FIELD_NUMBER = 1;
+    private long token_;
+    /**
+     * <code>int64 token = 1;</code>
+     */
+    public long getToken() {
+      return token_;
+    }
+
+    public static final int UID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object uid_;
+    /**
+     * <code>string uid = 2;</code>
+     */
+    public java.lang.String getUid() {
+      java.lang.Object ref = uid_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        uid_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string uid = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getUidBytes() {
+      java.lang.Object ref = uid_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        uid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DIAGNOSTICNODE_FIELD_NUMBER = 3;
+    private org.qmstr.grpc.service.Datamodel.DiagnosticNode diagnosticnode_;
+    /**
+     * <code>.service.DiagnosticNode diagnosticnode = 3;</code>
+     */
+    public boolean hasDiagnosticnode() {
+      return diagnosticnode_ != null;
+    }
+    /**
+     * <code>.service.DiagnosticNode diagnosticnode = 3;</code>
+     */
+    public org.qmstr.grpc.service.Datamodel.DiagnosticNode getDiagnosticnode() {
+      return diagnosticnode_ == null ? org.qmstr.grpc.service.Datamodel.DiagnosticNode.getDefaultInstance() : diagnosticnode_;
+    }
+    /**
+     * <code>.service.DiagnosticNode diagnosticnode = 3;</code>
+     */
+    public org.qmstr.grpc.service.Datamodel.DiagnosticNodeOrBuilder getDiagnosticnodeOrBuilder() {
+      return getDiagnosticnode();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (token_ != 0L) {
+        output.writeInt64(1, token_);
+      }
+      if (!getUidBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, uid_);
+      }
+      if (diagnosticnode_ != null) {
+        output.writeMessage(3, getDiagnosticnode());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (token_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, token_);
+      }
+      if (!getUidBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, uid_);
+      }
+      if (diagnosticnode_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getDiagnosticnode());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.qmstr.grpc.service.Analyzerservice.DiagnosticNodeMessage)) {
+        return super.equals(obj);
+      }
+      org.qmstr.grpc.service.Analyzerservice.DiagnosticNodeMessage other = (org.qmstr.grpc.service.Analyzerservice.DiagnosticNodeMessage) obj;
+
+      boolean result = true;
+      result = result && (getToken()
+          == other.getToken());
+      result = result && getUid()
+          .equals(other.getUid());
+      result = result && (hasDiagnosticnode() == other.hasDiagnosticnode());
+      if (hasDiagnosticnode()) {
+        result = result && getDiagnosticnode()
+            .equals(other.getDiagnosticnode());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getToken());
+      hash = (37 * hash) + UID_FIELD_NUMBER;
+      hash = (53 * hash) + getUid().hashCode();
+      if (hasDiagnosticnode()) {
+        hash = (37 * hash) + DIAGNOSTICNODE_FIELD_NUMBER;
+        hash = (53 * hash) + getDiagnosticnode().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.qmstr.grpc.service.Analyzerservice.DiagnosticNodeMessage parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.qmstr.grpc.service.Analyzerservice.DiagnosticNodeMessage parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.qmstr.grpc.service.Analyzerservice.DiagnosticNodeMessage parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.qmstr.grpc.service.Analyzerservice.DiagnosticNodeMessage parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.qmstr.grpc.service.Analyzerservice.DiagnosticNodeMessage parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.qmstr.grpc.service.Analyzerservice.DiagnosticNodeMessage parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.qmstr.grpc.service.Analyzerservice.DiagnosticNodeMessage parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.qmstr.grpc.service.Analyzerservice.DiagnosticNodeMessage parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.qmstr.grpc.service.Analyzerservice.DiagnosticNodeMessage parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static org.qmstr.grpc.service.Analyzerservice.DiagnosticNodeMessage parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.qmstr.grpc.service.Analyzerservice.DiagnosticNodeMessage parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.qmstr.grpc.service.Analyzerservice.DiagnosticNodeMessage parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.qmstr.grpc.service.Analyzerservice.DiagnosticNodeMessage prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code service.DiagnosticNodeMessage}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:service.DiagnosticNodeMessage)
+        org.qmstr.grpc.service.Analyzerservice.DiagnosticNodeMessageOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.qmstr.grpc.service.Analyzerservice.internal_static_service_DiagnosticNodeMessage_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.qmstr.grpc.service.Analyzerservice.internal_static_service_DiagnosticNodeMessage_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.qmstr.grpc.service.Analyzerservice.DiagnosticNodeMessage.class, org.qmstr.grpc.service.Analyzerservice.DiagnosticNodeMessage.Builder.class);
+      }
+
+      // Construct using org.qmstr.grpc.service.Analyzerservice.DiagnosticNodeMessage.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        token_ = 0L;
+
+        uid_ = "";
+
+        if (diagnosticnodeBuilder_ == null) {
+          diagnosticnode_ = null;
+        } else {
+          diagnosticnode_ = null;
+          diagnosticnodeBuilder_ = null;
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.qmstr.grpc.service.Analyzerservice.internal_static_service_DiagnosticNodeMessage_descriptor;
+      }
+
+      public org.qmstr.grpc.service.Analyzerservice.DiagnosticNodeMessage getDefaultInstanceForType() {
+        return org.qmstr.grpc.service.Analyzerservice.DiagnosticNodeMessage.getDefaultInstance();
+      }
+
+      public org.qmstr.grpc.service.Analyzerservice.DiagnosticNodeMessage build() {
+        org.qmstr.grpc.service.Analyzerservice.DiagnosticNodeMessage result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public org.qmstr.grpc.service.Analyzerservice.DiagnosticNodeMessage buildPartial() {
+        org.qmstr.grpc.service.Analyzerservice.DiagnosticNodeMessage result = new org.qmstr.grpc.service.Analyzerservice.DiagnosticNodeMessage(this);
+        result.token_ = token_;
+        result.uid_ = uid_;
+        if (diagnosticnodeBuilder_ == null) {
+          result.diagnosticnode_ = diagnosticnode_;
+        } else {
+          result.diagnosticnode_ = diagnosticnodeBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.qmstr.grpc.service.Analyzerservice.DiagnosticNodeMessage) {
+          return mergeFrom((org.qmstr.grpc.service.Analyzerservice.DiagnosticNodeMessage)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.qmstr.grpc.service.Analyzerservice.DiagnosticNodeMessage other) {
+        if (other == org.qmstr.grpc.service.Analyzerservice.DiagnosticNodeMessage.getDefaultInstance()) return this;
+        if (other.getToken() != 0L) {
+          setToken(other.getToken());
+        }
+        if (!other.getUid().isEmpty()) {
+          uid_ = other.uid_;
+          onChanged();
+        }
+        if (other.hasDiagnosticnode()) {
+          mergeDiagnosticnode(other.getDiagnosticnode());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        org.qmstr.grpc.service.Analyzerservice.DiagnosticNodeMessage parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (org.qmstr.grpc.service.Analyzerservice.DiagnosticNodeMessage) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long token_ ;
+      /**
+       * <code>int64 token = 1;</code>
+       */
+      public long getToken() {
+        return token_;
+      }
+      /**
+       * <code>int64 token = 1;</code>
+       */
+      public Builder setToken(long value) {
+        
+        token_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 token = 1;</code>
+       */
+      public Builder clearToken() {
+        
+        token_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object uid_ = "";
+      /**
+       * <code>string uid = 2;</code>
+       */
+      public java.lang.String getUid() {
+        java.lang.Object ref = uid_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          uid_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string uid = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getUidBytes() {
+        java.lang.Object ref = uid_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          uid_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string uid = 2;</code>
+       */
+      public Builder setUid(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        uid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string uid = 2;</code>
+       */
+      public Builder clearUid() {
+        
+        uid_ = getDefaultInstance().getUid();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string uid = 2;</code>
+       */
+      public Builder setUidBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        uid_ = value;
+        onChanged();
+        return this;
+      }
+
+      private org.qmstr.grpc.service.Datamodel.DiagnosticNode diagnosticnode_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.qmstr.grpc.service.Datamodel.DiagnosticNode, org.qmstr.grpc.service.Datamodel.DiagnosticNode.Builder, org.qmstr.grpc.service.Datamodel.DiagnosticNodeOrBuilder> diagnosticnodeBuilder_;
+      /**
+       * <code>.service.DiagnosticNode diagnosticnode = 3;</code>
+       */
+      public boolean hasDiagnosticnode() {
+        return diagnosticnodeBuilder_ != null || diagnosticnode_ != null;
+      }
+      /**
+       * <code>.service.DiagnosticNode diagnosticnode = 3;</code>
+       */
+      public org.qmstr.grpc.service.Datamodel.DiagnosticNode getDiagnosticnode() {
+        if (diagnosticnodeBuilder_ == null) {
+          return diagnosticnode_ == null ? org.qmstr.grpc.service.Datamodel.DiagnosticNode.getDefaultInstance() : diagnosticnode_;
+        } else {
+          return diagnosticnodeBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.service.DiagnosticNode diagnosticnode = 3;</code>
+       */
+      public Builder setDiagnosticnode(org.qmstr.grpc.service.Datamodel.DiagnosticNode value) {
+        if (diagnosticnodeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          diagnosticnode_ = value;
+          onChanged();
+        } else {
+          diagnosticnodeBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.service.DiagnosticNode diagnosticnode = 3;</code>
+       */
+      public Builder setDiagnosticnode(
+          org.qmstr.grpc.service.Datamodel.DiagnosticNode.Builder builderForValue) {
+        if (diagnosticnodeBuilder_ == null) {
+          diagnosticnode_ = builderForValue.build();
+          onChanged();
+        } else {
+          diagnosticnodeBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.service.DiagnosticNode diagnosticnode = 3;</code>
+       */
+      public Builder mergeDiagnosticnode(org.qmstr.grpc.service.Datamodel.DiagnosticNode value) {
+        if (diagnosticnodeBuilder_ == null) {
+          if (diagnosticnode_ != null) {
+            diagnosticnode_ =
+              org.qmstr.grpc.service.Datamodel.DiagnosticNode.newBuilder(diagnosticnode_).mergeFrom(value).buildPartial();
+          } else {
+            diagnosticnode_ = value;
+          }
+          onChanged();
+        } else {
+          diagnosticnodeBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.service.DiagnosticNode diagnosticnode = 3;</code>
+       */
+      public Builder clearDiagnosticnode() {
+        if (diagnosticnodeBuilder_ == null) {
+          diagnosticnode_ = null;
+          onChanged();
+        } else {
+          diagnosticnode_ = null;
+          diagnosticnodeBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.service.DiagnosticNode diagnosticnode = 3;</code>
+       */
+      public org.qmstr.grpc.service.Datamodel.DiagnosticNode.Builder getDiagnosticnodeBuilder() {
+        
+        onChanged();
+        return getDiagnosticnodeFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.service.DiagnosticNode diagnosticnode = 3;</code>
+       */
+      public org.qmstr.grpc.service.Datamodel.DiagnosticNodeOrBuilder getDiagnosticnodeOrBuilder() {
+        if (diagnosticnodeBuilder_ != null) {
+          return diagnosticnodeBuilder_.getMessageOrBuilder();
+        } else {
+          return diagnosticnode_ == null ?
+              org.qmstr.grpc.service.Datamodel.DiagnosticNode.getDefaultInstance() : diagnosticnode_;
+        }
+      }
+      /**
+       * <code>.service.DiagnosticNode diagnosticnode = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.qmstr.grpc.service.Datamodel.DiagnosticNode, org.qmstr.grpc.service.Datamodel.DiagnosticNode.Builder, org.qmstr.grpc.service.Datamodel.DiagnosticNodeOrBuilder> 
+          getDiagnosticnodeFieldBuilder() {
+        if (diagnosticnodeBuilder_ == null) {
+          diagnosticnodeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.qmstr.grpc.service.Datamodel.DiagnosticNode, org.qmstr.grpc.service.Datamodel.DiagnosticNode.Builder, org.qmstr.grpc.service.Datamodel.DiagnosticNodeOrBuilder>(
+                  getDiagnosticnode(),
+                  getParentForChildren(),
+                  isClean());
+          diagnosticnode_ = null;
+        }
+        return diagnosticnodeBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:service.DiagnosticNodeMessage)
+    }
+
+    // @@protoc_insertion_point(class_scope:service.DiagnosticNodeMessage)
+    private static final org.qmstr.grpc.service.Analyzerservice.DiagnosticNodeMessage DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.qmstr.grpc.service.Analyzerservice.DiagnosticNodeMessage();
+    }
+
+    public static org.qmstr.grpc.service.Analyzerservice.DiagnosticNodeMessage getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DiagnosticNodeMessage>
+        PARSER = new com.google.protobuf.AbstractParser<DiagnosticNodeMessage>() {
+      public DiagnosticNodeMessage parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DiagnosticNodeMessage(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DiagnosticNodeMessage> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DiagnosticNodeMessage> getParserForType() {
+      return PARSER;
+    }
+
+    public org.qmstr.grpc.service.Analyzerservice.DiagnosticNodeMessage getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface SendResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:service.SendResponse)
       com.google.protobuf.MessageOrBuilder {
@@ -4290,6 +5073,11 @@ public final class Analyzerservice {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_service_PackageNodeMessage_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_service_DiagnosticNodeMessage_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_service_DiagnosticNodeMessage_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_service_SendResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -4316,17 +5104,21 @@ public final class Analyzerservice {
       "ileNodeMessage\022\r\n\005token\030\001 \001(\003\022#\n\010filenod" +
       "e\030\002 \001(\0132\021.service.FileNode\"N\n\022PackageNod" +
       "eMessage\022\r\n\005token\030\001 \001(\003\022)\n\013packagenode\030\002" +
-      " \001(\0132\024.service.PackageNode\"\037\n\014SendRespon" +
-      "se\022\017\n\007success\030\001 \001(\0102\277\002\n\017AnalysisService\022" +
-      "V\n\021GetAnalyzerConfig\022\036.service.AnalyzerC" +
-      "onfigRequest\032\037.service.AnalyzerConfigRes" +
-      "ponse\"\000\022D\n\rSendInfoNodes\022\030.service.InfoN" +
-      "odeMessage\032\025.service.SendResponse\"\000(\001\022C\n" +
-      "\014SendFileNode\022\030.service.FileNodeMessage\032" +
-      "\025.service.SendResponse\"\000(\001\022I\n\017SendPackag" +
-      "eNode\022\033.service.PackageNodeMessage\032\025.ser" +
-      "vice.SendResponse\"\000(\001B\030\n\026org.qmstr.grpc." +
-      "serviceX\000b\006proto3"
+      " \001(\0132\024.service.PackageNode\"d\n\025Diagnostic" +
+      "NodeMessage\022\r\n\005token\030\001 \001(\003\022\013\n\003uid\030\002 \001(\t\022" +
+      "/\n\016diagnosticnode\030\003 \001(\0132\027.service.Diagno" +
+      "sticNode\"\037\n\014SendResponse\022\017\n\007success\030\001 \001(" +
+      "\0102\220\003\n\017AnalysisService\022V\n\021GetAnalyzerConf" +
+      "ig\022\036.service.AnalyzerConfigRequest\032\037.ser" +
+      "vice.AnalyzerConfigResponse\"\000\022D\n\rSendInf" +
+      "oNodes\022\030.service.InfoNodeMessage\032\025.servi" +
+      "ce.SendResponse\"\000(\001\022C\n\014SendFileNode\022\030.se" +
+      "rvice.FileNodeMessage\032\025.service.SendResp" +
+      "onse\"\000(\001\022I\n\017SendPackageNode\022\033.service.Pa" +
+      "ckageNodeMessage\032\025.service.SendResponse\"" +
+      "\000(\001\022O\n\022SendDiagnosticNode\022\036.service.Diag" +
+      "nosticNodeMessage\032\025.service.SendResponse" +
+      "\"\000(\001B\030\n\026org.qmstr.grpc.serviceX\000b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4377,8 +5169,14 @@ public final class Analyzerservice {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_service_PackageNodeMessage_descriptor,
         new java.lang.String[] { "Token", "Packagenode", });
-    internal_static_service_SendResponse_descriptor =
+    internal_static_service_DiagnosticNodeMessage_descriptor =
       getDescriptor().getMessageTypes().get(5);
+    internal_static_service_DiagnosticNodeMessage_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_service_DiagnosticNodeMessage_descriptor,
+        new java.lang.String[] { "Token", "Uid", "Diagnosticnode", });
+    internal_static_service_SendResponse_descriptor =
+      getDescriptor().getMessageTypes().get(6);
     internal_static_service_SendResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_service_SendResponse_descriptor,

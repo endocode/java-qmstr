@@ -459,6 +459,30 @@ public final class Datamodel {
      */
     org.qmstr.grpc.service.Datamodel.InfoNodeOrBuilder getAdditionalInfoOrBuilder(
         int index);
+
+    /**
+     * <code>repeated .service.DiagnosticNode diagnosticInfo = 10;</code>
+     */
+    java.util.List<org.qmstr.grpc.service.Datamodel.DiagnosticNode> 
+        getDiagnosticInfoList();
+    /**
+     * <code>repeated .service.DiagnosticNode diagnosticInfo = 10;</code>
+     */
+    org.qmstr.grpc.service.Datamodel.DiagnosticNode getDiagnosticInfo(int index);
+    /**
+     * <code>repeated .service.DiagnosticNode diagnosticInfo = 10;</code>
+     */
+    int getDiagnosticInfoCount();
+    /**
+     * <code>repeated .service.DiagnosticNode diagnosticInfo = 10;</code>
+     */
+    java.util.List<? extends org.qmstr.grpc.service.Datamodel.DiagnosticNodeOrBuilder> 
+        getDiagnosticInfoOrBuilderList();
+    /**
+     * <code>repeated .service.DiagnosticNode diagnosticInfo = 10;</code>
+     */
+    org.qmstr.grpc.service.Datamodel.DiagnosticNodeOrBuilder getDiagnosticInfoOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code service.FileNode}
@@ -482,6 +506,7 @@ public final class Datamodel {
       broken_ = false;
       derivedFrom_ = java.util.Collections.emptyList();
       additionalInfo_ = java.util.Collections.emptyList();
+      diagnosticInfo_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -574,6 +599,15 @@ public final class Datamodel {
                   input.readMessage(org.qmstr.grpc.service.Datamodel.InfoNode.parser(), extensionRegistry));
               break;
             }
+            case 82: {
+              if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+                diagnosticInfo_ = new java.util.ArrayList<org.qmstr.grpc.service.Datamodel.DiagnosticNode>();
+                mutable_bitField0_ |= 0x00000200;
+              }
+              diagnosticInfo_.add(
+                  input.readMessage(org.qmstr.grpc.service.Datamodel.DiagnosticNode.parser(), extensionRegistry));
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -587,6 +621,9 @@ public final class Datamodel {
         }
         if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
           additionalInfo_ = java.util.Collections.unmodifiableList(additionalInfo_);
+        }
+        if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+          diagnosticInfo_ = java.util.Collections.unmodifiableList(diagnosticInfo_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -986,6 +1023,41 @@ public final class Datamodel {
       return additionalInfo_.get(index);
     }
 
+    public static final int DIAGNOSTICINFO_FIELD_NUMBER = 10;
+    private java.util.List<org.qmstr.grpc.service.Datamodel.DiagnosticNode> diagnosticInfo_;
+    /**
+     * <code>repeated .service.DiagnosticNode diagnosticInfo = 10;</code>
+     */
+    public java.util.List<org.qmstr.grpc.service.Datamodel.DiagnosticNode> getDiagnosticInfoList() {
+      return diagnosticInfo_;
+    }
+    /**
+     * <code>repeated .service.DiagnosticNode diagnosticInfo = 10;</code>
+     */
+    public java.util.List<? extends org.qmstr.grpc.service.Datamodel.DiagnosticNodeOrBuilder> 
+        getDiagnosticInfoOrBuilderList() {
+      return diagnosticInfo_;
+    }
+    /**
+     * <code>repeated .service.DiagnosticNode diagnosticInfo = 10;</code>
+     */
+    public int getDiagnosticInfoCount() {
+      return diagnosticInfo_.size();
+    }
+    /**
+     * <code>repeated .service.DiagnosticNode diagnosticInfo = 10;</code>
+     */
+    public org.qmstr.grpc.service.Datamodel.DiagnosticNode getDiagnosticInfo(int index) {
+      return diagnosticInfo_.get(index);
+    }
+    /**
+     * <code>repeated .service.DiagnosticNode diagnosticInfo = 10;</code>
+     */
+    public org.qmstr.grpc.service.Datamodel.DiagnosticNodeOrBuilder getDiagnosticInfoOrBuilder(
+        int index) {
+      return diagnosticInfo_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -1024,6 +1096,9 @@ public final class Datamodel {
       }
       for (int i = 0; i < additionalInfo_.size(); i++) {
         output.writeMessage(9, additionalInfo_.get(i));
+      }
+      for (int i = 0; i < diagnosticInfo_.size(); i++) {
+        output.writeMessage(10, diagnosticInfo_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -1064,6 +1139,10 @@ public final class Datamodel {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, additionalInfo_.get(i));
       }
+      for (int i = 0; i < diagnosticInfo_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, diagnosticInfo_.get(i));
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1097,6 +1176,8 @@ public final class Datamodel {
           .equals(other.getDerivedFromList());
       result = result && getAdditionalInfoList()
           .equals(other.getAdditionalInfoList());
+      result = result && getDiagnosticInfoList()
+          .equals(other.getDiagnosticInfoList());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -1130,6 +1211,10 @@ public final class Datamodel {
       if (getAdditionalInfoCount() > 0) {
         hash = (37 * hash) + ADDITIONALINFO_FIELD_NUMBER;
         hash = (53 * hash) + getAdditionalInfoList().hashCode();
+      }
+      if (getDiagnosticInfoCount() > 0) {
+        hash = (37 * hash) + DIAGNOSTICINFO_FIELD_NUMBER;
+        hash = (53 * hash) + getDiagnosticInfoList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -1258,6 +1343,7 @@ public final class Datamodel {
                 .alwaysUseFieldBuilders) {
           getDerivedFromFieldBuilder();
           getAdditionalInfoFieldBuilder();
+          getDiagnosticInfoFieldBuilder();
         }
       }
       public Builder clear() {
@@ -1287,6 +1373,12 @@ public final class Datamodel {
           bitField0_ = (bitField0_ & ~0x00000100);
         } else {
           additionalInfoBuilder_.clear();
+        }
+        if (diagnosticInfoBuilder_ == null) {
+          diagnosticInfo_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000200);
+        } else {
+          diagnosticInfoBuilder_.clear();
         }
         return this;
       }
@@ -1336,6 +1428,15 @@ public final class Datamodel {
           result.additionalInfo_ = additionalInfo_;
         } else {
           result.additionalInfo_ = additionalInfoBuilder_.build();
+        }
+        if (diagnosticInfoBuilder_ == null) {
+          if (((bitField0_ & 0x00000200) == 0x00000200)) {
+            diagnosticInfo_ = java.util.Collections.unmodifiableList(diagnosticInfo_);
+            bitField0_ = (bitField0_ & ~0x00000200);
+          }
+          result.diagnosticInfo_ = diagnosticInfo_;
+        } else {
+          result.diagnosticInfo_ = diagnosticInfoBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -1454,6 +1555,32 @@ public final class Datamodel {
                    getAdditionalInfoFieldBuilder() : null;
             } else {
               additionalInfoBuilder_.addAllMessages(other.additionalInfo_);
+            }
+          }
+        }
+        if (diagnosticInfoBuilder_ == null) {
+          if (!other.diagnosticInfo_.isEmpty()) {
+            if (diagnosticInfo_.isEmpty()) {
+              diagnosticInfo_ = other.diagnosticInfo_;
+              bitField0_ = (bitField0_ & ~0x00000200);
+            } else {
+              ensureDiagnosticInfoIsMutable();
+              diagnosticInfo_.addAll(other.diagnosticInfo_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.diagnosticInfo_.isEmpty()) {
+            if (diagnosticInfoBuilder_.isEmpty()) {
+              diagnosticInfoBuilder_.dispose();
+              diagnosticInfoBuilder_ = null;
+              diagnosticInfo_ = other.diagnosticInfo_;
+              bitField0_ = (bitField0_ & ~0x00000200);
+              diagnosticInfoBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getDiagnosticInfoFieldBuilder() : null;
+            } else {
+              diagnosticInfoBuilder_.addAllMessages(other.diagnosticInfo_);
             }
           }
         }
@@ -2378,6 +2505,246 @@ public final class Datamodel {
           additionalInfo_ = null;
         }
         return additionalInfoBuilder_;
+      }
+
+      private java.util.List<org.qmstr.grpc.service.Datamodel.DiagnosticNode> diagnosticInfo_ =
+        java.util.Collections.emptyList();
+      private void ensureDiagnosticInfoIsMutable() {
+        if (!((bitField0_ & 0x00000200) == 0x00000200)) {
+          diagnosticInfo_ = new java.util.ArrayList<org.qmstr.grpc.service.Datamodel.DiagnosticNode>(diagnosticInfo_);
+          bitField0_ |= 0x00000200;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.qmstr.grpc.service.Datamodel.DiagnosticNode, org.qmstr.grpc.service.Datamodel.DiagnosticNode.Builder, org.qmstr.grpc.service.Datamodel.DiagnosticNodeOrBuilder> diagnosticInfoBuilder_;
+
+      /**
+       * <code>repeated .service.DiagnosticNode diagnosticInfo = 10;</code>
+       */
+      public java.util.List<org.qmstr.grpc.service.Datamodel.DiagnosticNode> getDiagnosticInfoList() {
+        if (diagnosticInfoBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(diagnosticInfo_);
+        } else {
+          return diagnosticInfoBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .service.DiagnosticNode diagnosticInfo = 10;</code>
+       */
+      public int getDiagnosticInfoCount() {
+        if (diagnosticInfoBuilder_ == null) {
+          return diagnosticInfo_.size();
+        } else {
+          return diagnosticInfoBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .service.DiagnosticNode diagnosticInfo = 10;</code>
+       */
+      public org.qmstr.grpc.service.Datamodel.DiagnosticNode getDiagnosticInfo(int index) {
+        if (diagnosticInfoBuilder_ == null) {
+          return diagnosticInfo_.get(index);
+        } else {
+          return diagnosticInfoBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .service.DiagnosticNode diagnosticInfo = 10;</code>
+       */
+      public Builder setDiagnosticInfo(
+          int index, org.qmstr.grpc.service.Datamodel.DiagnosticNode value) {
+        if (diagnosticInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDiagnosticInfoIsMutable();
+          diagnosticInfo_.set(index, value);
+          onChanged();
+        } else {
+          diagnosticInfoBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .service.DiagnosticNode diagnosticInfo = 10;</code>
+       */
+      public Builder setDiagnosticInfo(
+          int index, org.qmstr.grpc.service.Datamodel.DiagnosticNode.Builder builderForValue) {
+        if (diagnosticInfoBuilder_ == null) {
+          ensureDiagnosticInfoIsMutable();
+          diagnosticInfo_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          diagnosticInfoBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .service.DiagnosticNode diagnosticInfo = 10;</code>
+       */
+      public Builder addDiagnosticInfo(org.qmstr.grpc.service.Datamodel.DiagnosticNode value) {
+        if (diagnosticInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDiagnosticInfoIsMutable();
+          diagnosticInfo_.add(value);
+          onChanged();
+        } else {
+          diagnosticInfoBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .service.DiagnosticNode diagnosticInfo = 10;</code>
+       */
+      public Builder addDiagnosticInfo(
+          int index, org.qmstr.grpc.service.Datamodel.DiagnosticNode value) {
+        if (diagnosticInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDiagnosticInfoIsMutable();
+          diagnosticInfo_.add(index, value);
+          onChanged();
+        } else {
+          diagnosticInfoBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .service.DiagnosticNode diagnosticInfo = 10;</code>
+       */
+      public Builder addDiagnosticInfo(
+          org.qmstr.grpc.service.Datamodel.DiagnosticNode.Builder builderForValue) {
+        if (diagnosticInfoBuilder_ == null) {
+          ensureDiagnosticInfoIsMutable();
+          diagnosticInfo_.add(builderForValue.build());
+          onChanged();
+        } else {
+          diagnosticInfoBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .service.DiagnosticNode diagnosticInfo = 10;</code>
+       */
+      public Builder addDiagnosticInfo(
+          int index, org.qmstr.grpc.service.Datamodel.DiagnosticNode.Builder builderForValue) {
+        if (diagnosticInfoBuilder_ == null) {
+          ensureDiagnosticInfoIsMutable();
+          diagnosticInfo_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          diagnosticInfoBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .service.DiagnosticNode diagnosticInfo = 10;</code>
+       */
+      public Builder addAllDiagnosticInfo(
+          java.lang.Iterable<? extends org.qmstr.grpc.service.Datamodel.DiagnosticNode> values) {
+        if (diagnosticInfoBuilder_ == null) {
+          ensureDiagnosticInfoIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, diagnosticInfo_);
+          onChanged();
+        } else {
+          diagnosticInfoBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .service.DiagnosticNode diagnosticInfo = 10;</code>
+       */
+      public Builder clearDiagnosticInfo() {
+        if (diagnosticInfoBuilder_ == null) {
+          diagnosticInfo_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000200);
+          onChanged();
+        } else {
+          diagnosticInfoBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .service.DiagnosticNode diagnosticInfo = 10;</code>
+       */
+      public Builder removeDiagnosticInfo(int index) {
+        if (diagnosticInfoBuilder_ == null) {
+          ensureDiagnosticInfoIsMutable();
+          diagnosticInfo_.remove(index);
+          onChanged();
+        } else {
+          diagnosticInfoBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .service.DiagnosticNode diagnosticInfo = 10;</code>
+       */
+      public org.qmstr.grpc.service.Datamodel.DiagnosticNode.Builder getDiagnosticInfoBuilder(
+          int index) {
+        return getDiagnosticInfoFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .service.DiagnosticNode diagnosticInfo = 10;</code>
+       */
+      public org.qmstr.grpc.service.Datamodel.DiagnosticNodeOrBuilder getDiagnosticInfoOrBuilder(
+          int index) {
+        if (diagnosticInfoBuilder_ == null) {
+          return diagnosticInfo_.get(index);  } else {
+          return diagnosticInfoBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .service.DiagnosticNode diagnosticInfo = 10;</code>
+       */
+      public java.util.List<? extends org.qmstr.grpc.service.Datamodel.DiagnosticNodeOrBuilder> 
+           getDiagnosticInfoOrBuilderList() {
+        if (diagnosticInfoBuilder_ != null) {
+          return diagnosticInfoBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(diagnosticInfo_);
+        }
+      }
+      /**
+       * <code>repeated .service.DiagnosticNode diagnosticInfo = 10;</code>
+       */
+      public org.qmstr.grpc.service.Datamodel.DiagnosticNode.Builder addDiagnosticInfoBuilder() {
+        return getDiagnosticInfoFieldBuilder().addBuilder(
+            org.qmstr.grpc.service.Datamodel.DiagnosticNode.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .service.DiagnosticNode diagnosticInfo = 10;</code>
+       */
+      public org.qmstr.grpc.service.Datamodel.DiagnosticNode.Builder addDiagnosticInfoBuilder(
+          int index) {
+        return getDiagnosticInfoFieldBuilder().addBuilder(
+            index, org.qmstr.grpc.service.Datamodel.DiagnosticNode.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .service.DiagnosticNode diagnosticInfo = 10;</code>
+       */
+      public java.util.List<org.qmstr.grpc.service.Datamodel.DiagnosticNode.Builder> 
+           getDiagnosticInfoBuilderList() {
+        return getDiagnosticInfoFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.qmstr.grpc.service.Datamodel.DiagnosticNode, org.qmstr.grpc.service.Datamodel.DiagnosticNode.Builder, org.qmstr.grpc.service.Datamodel.DiagnosticNodeOrBuilder> 
+          getDiagnosticInfoFieldBuilder() {
+        if (diagnosticInfoBuilder_ == null) {
+          diagnosticInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              org.qmstr.grpc.service.Datamodel.DiagnosticNode, org.qmstr.grpc.service.Datamodel.DiagnosticNode.Builder, org.qmstr.grpc.service.Datamodel.DiagnosticNodeOrBuilder>(
+                  diagnosticInfo_,
+                  ((bitField0_ & 0x00000200) == 0x00000200),
+                  getParentForChildren(),
+                  isClean());
+          diagnosticInfo_ = null;
+        }
+        return diagnosticInfoBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4831,6 +5198,1385 @@ public final class Datamodel {
 
   }
 
+  public interface DiagnosticNodeOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:service.DiagnosticNode)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string uid = 1;</code>
+     */
+    java.lang.String getUid();
+    /**
+     * <code>string uid = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getUidBytes();
+
+    /**
+     * <code>string diagnosticNodeType = 2;</code>
+     */
+    java.lang.String getDiagnosticNodeType();
+    /**
+     * <code>string diagnosticNodeType = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getDiagnosticNodeTypeBytes();
+
+    /**
+     * <code>.service.DiagnosticNode.Severity severity = 3;</code>
+     */
+    int getSeverityValue();
+    /**
+     * <code>.service.DiagnosticNode.Severity severity = 3;</code>
+     */
+    org.qmstr.grpc.service.Datamodel.DiagnosticNode.Severity getSeverity();
+
+    /**
+     * <code>string message = 4;</code>
+     */
+    java.lang.String getMessage();
+    /**
+     * <code>string message = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getMessageBytes();
+
+    /**
+     * <code>repeated .service.Analyzer analyzer = 5;</code>
+     */
+    java.util.List<org.qmstr.grpc.service.Datamodel.Analyzer> 
+        getAnalyzerList();
+    /**
+     * <code>repeated .service.Analyzer analyzer = 5;</code>
+     */
+    org.qmstr.grpc.service.Datamodel.Analyzer getAnalyzer(int index);
+    /**
+     * <code>repeated .service.Analyzer analyzer = 5;</code>
+     */
+    int getAnalyzerCount();
+    /**
+     * <code>repeated .service.Analyzer analyzer = 5;</code>
+     */
+    java.util.List<? extends org.qmstr.grpc.service.Datamodel.AnalyzerOrBuilder> 
+        getAnalyzerOrBuilderList();
+    /**
+     * <code>repeated .service.Analyzer analyzer = 5;</code>
+     */
+    org.qmstr.grpc.service.Datamodel.AnalyzerOrBuilder getAnalyzerOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code service.DiagnosticNode}
+   */
+  public  static final class DiagnosticNode extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:service.DiagnosticNode)
+      DiagnosticNodeOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DiagnosticNode.newBuilder() to construct.
+    private DiagnosticNode(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DiagnosticNode() {
+      uid_ = "";
+      diagnosticNodeType_ = "";
+      severity_ = 0;
+      message_ = "";
+      analyzer_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DiagnosticNode(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              uid_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              diagnosticNodeType_ = s;
+              break;
+            }
+            case 24: {
+              int rawValue = input.readEnum();
+
+              severity_ = rawValue;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              message_ = s;
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                analyzer_ = new java.util.ArrayList<org.qmstr.grpc.service.Datamodel.Analyzer>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              analyzer_.add(
+                  input.readMessage(org.qmstr.grpc.service.Datamodel.Analyzer.parser(), extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+          analyzer_ = java.util.Collections.unmodifiableList(analyzer_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.qmstr.grpc.service.Datamodel.internal_static_service_DiagnosticNode_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.qmstr.grpc.service.Datamodel.internal_static_service_DiagnosticNode_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.qmstr.grpc.service.Datamodel.DiagnosticNode.class, org.qmstr.grpc.service.Datamodel.DiagnosticNode.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code service.DiagnosticNode.Severity}
+     */
+    public enum Severity
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>UNDEF = 0;</code>
+       */
+      UNDEF(0),
+      /**
+       * <code>INFO = 1;</code>
+       */
+      INFO(1),
+      /**
+       * <code>WARNING = 2;</code>
+       */
+      WARNING(2),
+      /**
+       * <code>ERROR = 3;</code>
+       */
+      ERROR(3),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>UNDEF = 0;</code>
+       */
+      public static final int UNDEF_VALUE = 0;
+      /**
+       * <code>INFO = 1;</code>
+       */
+      public static final int INFO_VALUE = 1;
+      /**
+       * <code>WARNING = 2;</code>
+       */
+      public static final int WARNING_VALUE = 2;
+      /**
+       * <code>ERROR = 3;</code>
+       */
+      public static final int ERROR_VALUE = 3;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Severity valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static Severity forNumber(int value) {
+        switch (value) {
+          case 0: return UNDEF;
+          case 1: return INFO;
+          case 2: return WARNING;
+          case 3: return ERROR;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Severity>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Severity> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Severity>() {
+              public Severity findValueByNumber(int number) {
+                return Severity.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return org.qmstr.grpc.service.Datamodel.DiagnosticNode.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Severity[] VALUES = values();
+
+      public static Severity valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Severity(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:service.DiagnosticNode.Severity)
+    }
+
+    private int bitField0_;
+    public static final int UID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object uid_;
+    /**
+     * <code>string uid = 1;</code>
+     */
+    public java.lang.String getUid() {
+      java.lang.Object ref = uid_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        uid_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string uid = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getUidBytes() {
+      java.lang.Object ref = uid_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        uid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DIAGNOSTICNODETYPE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object diagnosticNodeType_;
+    /**
+     * <code>string diagnosticNodeType = 2;</code>
+     */
+    public java.lang.String getDiagnosticNodeType() {
+      java.lang.Object ref = diagnosticNodeType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        diagnosticNodeType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string diagnosticNodeType = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDiagnosticNodeTypeBytes() {
+      java.lang.Object ref = diagnosticNodeType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        diagnosticNodeType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SEVERITY_FIELD_NUMBER = 3;
+    private int severity_;
+    /**
+     * <code>.service.DiagnosticNode.Severity severity = 3;</code>
+     */
+    public int getSeverityValue() {
+      return severity_;
+    }
+    /**
+     * <code>.service.DiagnosticNode.Severity severity = 3;</code>
+     */
+    public org.qmstr.grpc.service.Datamodel.DiagnosticNode.Severity getSeverity() {
+      org.qmstr.grpc.service.Datamodel.DiagnosticNode.Severity result = org.qmstr.grpc.service.Datamodel.DiagnosticNode.Severity.valueOf(severity_);
+      return result == null ? org.qmstr.grpc.service.Datamodel.DiagnosticNode.Severity.UNRECOGNIZED : result;
+    }
+
+    public static final int MESSAGE_FIELD_NUMBER = 4;
+    private volatile java.lang.Object message_;
+    /**
+     * <code>string message = 4;</code>
+     */
+    public java.lang.String getMessage() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        message_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string message = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getMessageBytes() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        message_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ANALYZER_FIELD_NUMBER = 5;
+    private java.util.List<org.qmstr.grpc.service.Datamodel.Analyzer> analyzer_;
+    /**
+     * <code>repeated .service.Analyzer analyzer = 5;</code>
+     */
+    public java.util.List<org.qmstr.grpc.service.Datamodel.Analyzer> getAnalyzerList() {
+      return analyzer_;
+    }
+    /**
+     * <code>repeated .service.Analyzer analyzer = 5;</code>
+     */
+    public java.util.List<? extends org.qmstr.grpc.service.Datamodel.AnalyzerOrBuilder> 
+        getAnalyzerOrBuilderList() {
+      return analyzer_;
+    }
+    /**
+     * <code>repeated .service.Analyzer analyzer = 5;</code>
+     */
+    public int getAnalyzerCount() {
+      return analyzer_.size();
+    }
+    /**
+     * <code>repeated .service.Analyzer analyzer = 5;</code>
+     */
+    public org.qmstr.grpc.service.Datamodel.Analyzer getAnalyzer(int index) {
+      return analyzer_.get(index);
+    }
+    /**
+     * <code>repeated .service.Analyzer analyzer = 5;</code>
+     */
+    public org.qmstr.grpc.service.Datamodel.AnalyzerOrBuilder getAnalyzerOrBuilder(
+        int index) {
+      return analyzer_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getUidBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uid_);
+      }
+      if (!getDiagnosticNodeTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, diagnosticNodeType_);
+      }
+      if (severity_ != org.qmstr.grpc.service.Datamodel.DiagnosticNode.Severity.UNDEF.getNumber()) {
+        output.writeEnum(3, severity_);
+      }
+      if (!getMessageBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, message_);
+      }
+      for (int i = 0; i < analyzer_.size(); i++) {
+        output.writeMessage(5, analyzer_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getUidBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uid_);
+      }
+      if (!getDiagnosticNodeTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, diagnosticNodeType_);
+      }
+      if (severity_ != org.qmstr.grpc.service.Datamodel.DiagnosticNode.Severity.UNDEF.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(3, severity_);
+      }
+      if (!getMessageBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, message_);
+      }
+      for (int i = 0; i < analyzer_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, analyzer_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.qmstr.grpc.service.Datamodel.DiagnosticNode)) {
+        return super.equals(obj);
+      }
+      org.qmstr.grpc.service.Datamodel.DiagnosticNode other = (org.qmstr.grpc.service.Datamodel.DiagnosticNode) obj;
+
+      boolean result = true;
+      result = result && getUid()
+          .equals(other.getUid());
+      result = result && getDiagnosticNodeType()
+          .equals(other.getDiagnosticNodeType());
+      result = result && severity_ == other.severity_;
+      result = result && getMessage()
+          .equals(other.getMessage());
+      result = result && getAnalyzerList()
+          .equals(other.getAnalyzerList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + UID_FIELD_NUMBER;
+      hash = (53 * hash) + getUid().hashCode();
+      hash = (37 * hash) + DIAGNOSTICNODETYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getDiagnosticNodeType().hashCode();
+      hash = (37 * hash) + SEVERITY_FIELD_NUMBER;
+      hash = (53 * hash) + severity_;
+      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getMessage().hashCode();
+      if (getAnalyzerCount() > 0) {
+        hash = (37 * hash) + ANALYZER_FIELD_NUMBER;
+        hash = (53 * hash) + getAnalyzerList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.qmstr.grpc.service.Datamodel.DiagnosticNode parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.qmstr.grpc.service.Datamodel.DiagnosticNode parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.qmstr.grpc.service.Datamodel.DiagnosticNode parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.qmstr.grpc.service.Datamodel.DiagnosticNode parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.qmstr.grpc.service.Datamodel.DiagnosticNode parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.qmstr.grpc.service.Datamodel.DiagnosticNode parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.qmstr.grpc.service.Datamodel.DiagnosticNode parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.qmstr.grpc.service.Datamodel.DiagnosticNode parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.qmstr.grpc.service.Datamodel.DiagnosticNode parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static org.qmstr.grpc.service.Datamodel.DiagnosticNode parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.qmstr.grpc.service.Datamodel.DiagnosticNode parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.qmstr.grpc.service.Datamodel.DiagnosticNode parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.qmstr.grpc.service.Datamodel.DiagnosticNode prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code service.DiagnosticNode}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:service.DiagnosticNode)
+        org.qmstr.grpc.service.Datamodel.DiagnosticNodeOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.qmstr.grpc.service.Datamodel.internal_static_service_DiagnosticNode_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.qmstr.grpc.service.Datamodel.internal_static_service_DiagnosticNode_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.qmstr.grpc.service.Datamodel.DiagnosticNode.class, org.qmstr.grpc.service.Datamodel.DiagnosticNode.Builder.class);
+      }
+
+      // Construct using org.qmstr.grpc.service.Datamodel.DiagnosticNode.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getAnalyzerFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        uid_ = "";
+
+        diagnosticNodeType_ = "";
+
+        severity_ = 0;
+
+        message_ = "";
+
+        if (analyzerBuilder_ == null) {
+          analyzer_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+        } else {
+          analyzerBuilder_.clear();
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.qmstr.grpc.service.Datamodel.internal_static_service_DiagnosticNode_descriptor;
+      }
+
+      public org.qmstr.grpc.service.Datamodel.DiagnosticNode getDefaultInstanceForType() {
+        return org.qmstr.grpc.service.Datamodel.DiagnosticNode.getDefaultInstance();
+      }
+
+      public org.qmstr.grpc.service.Datamodel.DiagnosticNode build() {
+        org.qmstr.grpc.service.Datamodel.DiagnosticNode result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public org.qmstr.grpc.service.Datamodel.DiagnosticNode buildPartial() {
+        org.qmstr.grpc.service.Datamodel.DiagnosticNode result = new org.qmstr.grpc.service.Datamodel.DiagnosticNode(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.uid_ = uid_;
+        result.diagnosticNodeType_ = diagnosticNodeType_;
+        result.severity_ = severity_;
+        result.message_ = message_;
+        if (analyzerBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) == 0x00000010)) {
+            analyzer_ = java.util.Collections.unmodifiableList(analyzer_);
+            bitField0_ = (bitField0_ & ~0x00000010);
+          }
+          result.analyzer_ = analyzer_;
+        } else {
+          result.analyzer_ = analyzerBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.qmstr.grpc.service.Datamodel.DiagnosticNode) {
+          return mergeFrom((org.qmstr.grpc.service.Datamodel.DiagnosticNode)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.qmstr.grpc.service.Datamodel.DiagnosticNode other) {
+        if (other == org.qmstr.grpc.service.Datamodel.DiagnosticNode.getDefaultInstance()) return this;
+        if (!other.getUid().isEmpty()) {
+          uid_ = other.uid_;
+          onChanged();
+        }
+        if (!other.getDiagnosticNodeType().isEmpty()) {
+          diagnosticNodeType_ = other.diagnosticNodeType_;
+          onChanged();
+        }
+        if (other.severity_ != 0) {
+          setSeverityValue(other.getSeverityValue());
+        }
+        if (!other.getMessage().isEmpty()) {
+          message_ = other.message_;
+          onChanged();
+        }
+        if (analyzerBuilder_ == null) {
+          if (!other.analyzer_.isEmpty()) {
+            if (analyzer_.isEmpty()) {
+              analyzer_ = other.analyzer_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+            } else {
+              ensureAnalyzerIsMutable();
+              analyzer_.addAll(other.analyzer_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.analyzer_.isEmpty()) {
+            if (analyzerBuilder_.isEmpty()) {
+              analyzerBuilder_.dispose();
+              analyzerBuilder_ = null;
+              analyzer_ = other.analyzer_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+              analyzerBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getAnalyzerFieldBuilder() : null;
+            } else {
+              analyzerBuilder_.addAllMessages(other.analyzer_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        org.qmstr.grpc.service.Datamodel.DiagnosticNode parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (org.qmstr.grpc.service.Datamodel.DiagnosticNode) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object uid_ = "";
+      /**
+       * <code>string uid = 1;</code>
+       */
+      public java.lang.String getUid() {
+        java.lang.Object ref = uid_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          uid_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string uid = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getUidBytes() {
+        java.lang.Object ref = uid_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          uid_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string uid = 1;</code>
+       */
+      public Builder setUid(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        uid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string uid = 1;</code>
+       */
+      public Builder clearUid() {
+        
+        uid_ = getDefaultInstance().getUid();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string uid = 1;</code>
+       */
+      public Builder setUidBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        uid_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object diagnosticNodeType_ = "";
+      /**
+       * <code>string diagnosticNodeType = 2;</code>
+       */
+      public java.lang.String getDiagnosticNodeType() {
+        java.lang.Object ref = diagnosticNodeType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          diagnosticNodeType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string diagnosticNodeType = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDiagnosticNodeTypeBytes() {
+        java.lang.Object ref = diagnosticNodeType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          diagnosticNodeType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string diagnosticNodeType = 2;</code>
+       */
+      public Builder setDiagnosticNodeType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        diagnosticNodeType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string diagnosticNodeType = 2;</code>
+       */
+      public Builder clearDiagnosticNodeType() {
+        
+        diagnosticNodeType_ = getDefaultInstance().getDiagnosticNodeType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string diagnosticNodeType = 2;</code>
+       */
+      public Builder setDiagnosticNodeTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        diagnosticNodeType_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int severity_ = 0;
+      /**
+       * <code>.service.DiagnosticNode.Severity severity = 3;</code>
+       */
+      public int getSeverityValue() {
+        return severity_;
+      }
+      /**
+       * <code>.service.DiagnosticNode.Severity severity = 3;</code>
+       */
+      public Builder setSeverityValue(int value) {
+        severity_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.service.DiagnosticNode.Severity severity = 3;</code>
+       */
+      public org.qmstr.grpc.service.Datamodel.DiagnosticNode.Severity getSeverity() {
+        org.qmstr.grpc.service.Datamodel.DiagnosticNode.Severity result = org.qmstr.grpc.service.Datamodel.DiagnosticNode.Severity.valueOf(severity_);
+        return result == null ? org.qmstr.grpc.service.Datamodel.DiagnosticNode.Severity.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.service.DiagnosticNode.Severity severity = 3;</code>
+       */
+      public Builder setSeverity(org.qmstr.grpc.service.Datamodel.DiagnosticNode.Severity value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        severity_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.service.DiagnosticNode.Severity severity = 3;</code>
+       */
+      public Builder clearSeverity() {
+        
+        severity_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object message_ = "";
+      /**
+       * <code>string message = 4;</code>
+       */
+      public java.lang.String getMessage() {
+        java.lang.Object ref = message_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          message_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string message = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getMessageBytes() {
+        java.lang.Object ref = message_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          message_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string message = 4;</code>
+       */
+      public Builder setMessage(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        message_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string message = 4;</code>
+       */
+      public Builder clearMessage() {
+        
+        message_ = getDefaultInstance().getMessage();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string message = 4;</code>
+       */
+      public Builder setMessageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        message_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<org.qmstr.grpc.service.Datamodel.Analyzer> analyzer_ =
+        java.util.Collections.emptyList();
+      private void ensureAnalyzerIsMutable() {
+        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+          analyzer_ = new java.util.ArrayList<org.qmstr.grpc.service.Datamodel.Analyzer>(analyzer_);
+          bitField0_ |= 0x00000010;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.qmstr.grpc.service.Datamodel.Analyzer, org.qmstr.grpc.service.Datamodel.Analyzer.Builder, org.qmstr.grpc.service.Datamodel.AnalyzerOrBuilder> analyzerBuilder_;
+
+      /**
+       * <code>repeated .service.Analyzer analyzer = 5;</code>
+       */
+      public java.util.List<org.qmstr.grpc.service.Datamodel.Analyzer> getAnalyzerList() {
+        if (analyzerBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(analyzer_);
+        } else {
+          return analyzerBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .service.Analyzer analyzer = 5;</code>
+       */
+      public int getAnalyzerCount() {
+        if (analyzerBuilder_ == null) {
+          return analyzer_.size();
+        } else {
+          return analyzerBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .service.Analyzer analyzer = 5;</code>
+       */
+      public org.qmstr.grpc.service.Datamodel.Analyzer getAnalyzer(int index) {
+        if (analyzerBuilder_ == null) {
+          return analyzer_.get(index);
+        } else {
+          return analyzerBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .service.Analyzer analyzer = 5;</code>
+       */
+      public Builder setAnalyzer(
+          int index, org.qmstr.grpc.service.Datamodel.Analyzer value) {
+        if (analyzerBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAnalyzerIsMutable();
+          analyzer_.set(index, value);
+          onChanged();
+        } else {
+          analyzerBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .service.Analyzer analyzer = 5;</code>
+       */
+      public Builder setAnalyzer(
+          int index, org.qmstr.grpc.service.Datamodel.Analyzer.Builder builderForValue) {
+        if (analyzerBuilder_ == null) {
+          ensureAnalyzerIsMutable();
+          analyzer_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          analyzerBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .service.Analyzer analyzer = 5;</code>
+       */
+      public Builder addAnalyzer(org.qmstr.grpc.service.Datamodel.Analyzer value) {
+        if (analyzerBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAnalyzerIsMutable();
+          analyzer_.add(value);
+          onChanged();
+        } else {
+          analyzerBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .service.Analyzer analyzer = 5;</code>
+       */
+      public Builder addAnalyzer(
+          int index, org.qmstr.grpc.service.Datamodel.Analyzer value) {
+        if (analyzerBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAnalyzerIsMutable();
+          analyzer_.add(index, value);
+          onChanged();
+        } else {
+          analyzerBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .service.Analyzer analyzer = 5;</code>
+       */
+      public Builder addAnalyzer(
+          org.qmstr.grpc.service.Datamodel.Analyzer.Builder builderForValue) {
+        if (analyzerBuilder_ == null) {
+          ensureAnalyzerIsMutable();
+          analyzer_.add(builderForValue.build());
+          onChanged();
+        } else {
+          analyzerBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .service.Analyzer analyzer = 5;</code>
+       */
+      public Builder addAnalyzer(
+          int index, org.qmstr.grpc.service.Datamodel.Analyzer.Builder builderForValue) {
+        if (analyzerBuilder_ == null) {
+          ensureAnalyzerIsMutable();
+          analyzer_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          analyzerBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .service.Analyzer analyzer = 5;</code>
+       */
+      public Builder addAllAnalyzer(
+          java.lang.Iterable<? extends org.qmstr.grpc.service.Datamodel.Analyzer> values) {
+        if (analyzerBuilder_ == null) {
+          ensureAnalyzerIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, analyzer_);
+          onChanged();
+        } else {
+          analyzerBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .service.Analyzer analyzer = 5;</code>
+       */
+      public Builder clearAnalyzer() {
+        if (analyzerBuilder_ == null) {
+          analyzer_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+          onChanged();
+        } else {
+          analyzerBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .service.Analyzer analyzer = 5;</code>
+       */
+      public Builder removeAnalyzer(int index) {
+        if (analyzerBuilder_ == null) {
+          ensureAnalyzerIsMutable();
+          analyzer_.remove(index);
+          onChanged();
+        } else {
+          analyzerBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .service.Analyzer analyzer = 5;</code>
+       */
+      public org.qmstr.grpc.service.Datamodel.Analyzer.Builder getAnalyzerBuilder(
+          int index) {
+        return getAnalyzerFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .service.Analyzer analyzer = 5;</code>
+       */
+      public org.qmstr.grpc.service.Datamodel.AnalyzerOrBuilder getAnalyzerOrBuilder(
+          int index) {
+        if (analyzerBuilder_ == null) {
+          return analyzer_.get(index);  } else {
+          return analyzerBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .service.Analyzer analyzer = 5;</code>
+       */
+      public java.util.List<? extends org.qmstr.grpc.service.Datamodel.AnalyzerOrBuilder> 
+           getAnalyzerOrBuilderList() {
+        if (analyzerBuilder_ != null) {
+          return analyzerBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(analyzer_);
+        }
+      }
+      /**
+       * <code>repeated .service.Analyzer analyzer = 5;</code>
+       */
+      public org.qmstr.grpc.service.Datamodel.Analyzer.Builder addAnalyzerBuilder() {
+        return getAnalyzerFieldBuilder().addBuilder(
+            org.qmstr.grpc.service.Datamodel.Analyzer.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .service.Analyzer analyzer = 5;</code>
+       */
+      public org.qmstr.grpc.service.Datamodel.Analyzer.Builder addAnalyzerBuilder(
+          int index) {
+        return getAnalyzerFieldBuilder().addBuilder(
+            index, org.qmstr.grpc.service.Datamodel.Analyzer.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .service.Analyzer analyzer = 5;</code>
+       */
+      public java.util.List<org.qmstr.grpc.service.Datamodel.Analyzer.Builder> 
+           getAnalyzerBuilderList() {
+        return getAnalyzerFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.qmstr.grpc.service.Datamodel.Analyzer, org.qmstr.grpc.service.Datamodel.Analyzer.Builder, org.qmstr.grpc.service.Datamodel.AnalyzerOrBuilder> 
+          getAnalyzerFieldBuilder() {
+        if (analyzerBuilder_ == null) {
+          analyzerBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              org.qmstr.grpc.service.Datamodel.Analyzer, org.qmstr.grpc.service.Datamodel.Analyzer.Builder, org.qmstr.grpc.service.Datamodel.AnalyzerOrBuilder>(
+                  analyzer_,
+                  ((bitField0_ & 0x00000010) == 0x00000010),
+                  getParentForChildren(),
+                  isClean());
+          analyzer_ = null;
+        }
+        return analyzerBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:service.DiagnosticNode)
+    }
+
+    // @@protoc_insertion_point(class_scope:service.DiagnosticNode)
+    private static final org.qmstr.grpc.service.Datamodel.DiagnosticNode DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.qmstr.grpc.service.Datamodel.DiagnosticNode();
+    }
+
+    public static org.qmstr.grpc.service.Datamodel.DiagnosticNode getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DiagnosticNode>
+        PARSER = new com.google.protobuf.AbstractParser<DiagnosticNode>() {
+      public DiagnosticNode parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DiagnosticNode(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DiagnosticNode> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DiagnosticNode> getParserForType() {
+      return PARSER;
+    }
+
+    public org.qmstr.grpc.service.Datamodel.DiagnosticNode getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface AnalyzerOrBuilder extends
       // @@protoc_insertion_point(interface_extends:service.Analyzer)
       com.google.protobuf.MessageOrBuilder {
@@ -6819,6 +8565,30 @@ public final class Datamodel {
      */
     com.google.protobuf.ByteString
         getBuildConfigBytes();
+
+    /**
+     * <code>repeated .service.DiagnosticNode diagnosticInfo = 8;</code>
+     */
+    java.util.List<org.qmstr.grpc.service.Datamodel.DiagnosticNode> 
+        getDiagnosticInfoList();
+    /**
+     * <code>repeated .service.DiagnosticNode diagnosticInfo = 8;</code>
+     */
+    org.qmstr.grpc.service.Datamodel.DiagnosticNode getDiagnosticInfo(int index);
+    /**
+     * <code>repeated .service.DiagnosticNode diagnosticInfo = 8;</code>
+     */
+    int getDiagnosticInfoCount();
+    /**
+     * <code>repeated .service.DiagnosticNode diagnosticInfo = 8;</code>
+     */
+    java.util.List<? extends org.qmstr.grpc.service.Datamodel.DiagnosticNodeOrBuilder> 
+        getDiagnosticInfoOrBuilderList();
+    /**
+     * <code>repeated .service.DiagnosticNode diagnosticInfo = 8;</code>
+     */
+    org.qmstr.grpc.service.Datamodel.DiagnosticNodeOrBuilder getDiagnosticInfoOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code service.PackageNode}
@@ -6839,6 +8609,7 @@ public final class Datamodel {
       targets_ = java.util.Collections.emptyList();
       additionalInfo_ = java.util.Collections.emptyList();
       buildConfig_ = "";
+      diagnosticInfo_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -6914,6 +8685,15 @@ public final class Datamodel {
               buildConfig_ = s;
               break;
             }
+            case 66: {
+              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+                diagnosticInfo_ = new java.util.ArrayList<org.qmstr.grpc.service.Datamodel.DiagnosticNode>();
+                mutable_bitField0_ |= 0x00000040;
+              }
+              diagnosticInfo_.add(
+                  input.readMessage(org.qmstr.grpc.service.Datamodel.DiagnosticNode.parser(), extensionRegistry));
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -6927,6 +8707,9 @@ public final class Datamodel {
         }
         if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
           additionalInfo_ = java.util.Collections.unmodifiableList(additionalInfo_);
+        }
+        if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+          diagnosticInfo_ = java.util.Collections.unmodifiableList(diagnosticInfo_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -7151,6 +8934,41 @@ public final class Datamodel {
       }
     }
 
+    public static final int DIAGNOSTICINFO_FIELD_NUMBER = 8;
+    private java.util.List<org.qmstr.grpc.service.Datamodel.DiagnosticNode> diagnosticInfo_;
+    /**
+     * <code>repeated .service.DiagnosticNode diagnosticInfo = 8;</code>
+     */
+    public java.util.List<org.qmstr.grpc.service.Datamodel.DiagnosticNode> getDiagnosticInfoList() {
+      return diagnosticInfo_;
+    }
+    /**
+     * <code>repeated .service.DiagnosticNode diagnosticInfo = 8;</code>
+     */
+    public java.util.List<? extends org.qmstr.grpc.service.Datamodel.DiagnosticNodeOrBuilder> 
+        getDiagnosticInfoOrBuilderList() {
+      return diagnosticInfo_;
+    }
+    /**
+     * <code>repeated .service.DiagnosticNode diagnosticInfo = 8;</code>
+     */
+    public int getDiagnosticInfoCount() {
+      return diagnosticInfo_.size();
+    }
+    /**
+     * <code>repeated .service.DiagnosticNode diagnosticInfo = 8;</code>
+     */
+    public org.qmstr.grpc.service.Datamodel.DiagnosticNode getDiagnosticInfo(int index) {
+      return diagnosticInfo_.get(index);
+    }
+    /**
+     * <code>repeated .service.DiagnosticNode diagnosticInfo = 8;</code>
+     */
+    public org.qmstr.grpc.service.Datamodel.DiagnosticNodeOrBuilder getDiagnosticInfoOrBuilder(
+        int index) {
+      return diagnosticInfo_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -7181,6 +8999,9 @@ public final class Datamodel {
       if (!getBuildConfigBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, buildConfig_);
       }
+      for (int i = 0; i < diagnosticInfo_.size(); i++) {
+        output.writeMessage(8, diagnosticInfo_.get(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -7208,6 +9029,10 @@ public final class Datamodel {
       }
       if (!getBuildConfigBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, buildConfig_);
+      }
+      for (int i = 0; i < diagnosticInfo_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, diagnosticInfo_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7237,6 +9062,8 @@ public final class Datamodel {
           .equals(other.getAdditionalInfoList());
       result = result && getBuildConfig()
           .equals(other.getBuildConfig());
+      result = result && getDiagnosticInfoList()
+          .equals(other.getDiagnosticInfoList());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -7264,6 +9091,10 @@ public final class Datamodel {
       }
       hash = (37 * hash) + BUILDCONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getBuildConfig().hashCode();
+      if (getDiagnosticInfoCount() > 0) {
+        hash = (37 * hash) + DIAGNOSTICINFO_FIELD_NUMBER;
+        hash = (53 * hash) + getDiagnosticInfoList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -7391,6 +9222,7 @@ public final class Datamodel {
                 .alwaysUseFieldBuilders) {
           getTargetsFieldBuilder();
           getAdditionalInfoFieldBuilder();
+          getDiagnosticInfoFieldBuilder();
         }
       }
       public Builder clear() {
@@ -7415,6 +9247,12 @@ public final class Datamodel {
         }
         buildConfig_ = "";
 
+        if (diagnosticInfoBuilder_ == null) {
+          diagnosticInfo_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000040);
+        } else {
+          diagnosticInfoBuilder_.clear();
+        }
         return this;
       }
 
@@ -7461,6 +9299,15 @@ public final class Datamodel {
           result.additionalInfo_ = additionalInfoBuilder_.build();
         }
         result.buildConfig_ = buildConfig_;
+        if (diagnosticInfoBuilder_ == null) {
+          if (((bitField0_ & 0x00000040) == 0x00000040)) {
+            diagnosticInfo_ = java.util.Collections.unmodifiableList(diagnosticInfo_);
+            bitField0_ = (bitField0_ & ~0x00000040);
+          }
+          result.diagnosticInfo_ = diagnosticInfo_;
+        } else {
+          result.diagnosticInfo_ = diagnosticInfoBuilder_.build();
+        }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -7570,6 +9417,32 @@ public final class Datamodel {
         if (!other.getBuildConfig().isEmpty()) {
           buildConfig_ = other.buildConfig_;
           onChanged();
+        }
+        if (diagnosticInfoBuilder_ == null) {
+          if (!other.diagnosticInfo_.isEmpty()) {
+            if (diagnosticInfo_.isEmpty()) {
+              diagnosticInfo_ = other.diagnosticInfo_;
+              bitField0_ = (bitField0_ & ~0x00000040);
+            } else {
+              ensureDiagnosticInfoIsMutable();
+              diagnosticInfo_.addAll(other.diagnosticInfo_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.diagnosticInfo_.isEmpty()) {
+            if (diagnosticInfoBuilder_.isEmpty()) {
+              diagnosticInfoBuilder_.dispose();
+              diagnosticInfoBuilder_ = null;
+              diagnosticInfo_ = other.diagnosticInfo_;
+              bitField0_ = (bitField0_ & ~0x00000040);
+              diagnosticInfoBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getDiagnosticInfoFieldBuilder() : null;
+            } else {
+              diagnosticInfoBuilder_.addAllMessages(other.diagnosticInfo_);
+            }
+          }
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -8353,6 +10226,246 @@ public final class Datamodel {
         buildConfig_ = value;
         onChanged();
         return this;
+      }
+
+      private java.util.List<org.qmstr.grpc.service.Datamodel.DiagnosticNode> diagnosticInfo_ =
+        java.util.Collections.emptyList();
+      private void ensureDiagnosticInfoIsMutable() {
+        if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+          diagnosticInfo_ = new java.util.ArrayList<org.qmstr.grpc.service.Datamodel.DiagnosticNode>(diagnosticInfo_);
+          bitField0_ |= 0x00000040;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.qmstr.grpc.service.Datamodel.DiagnosticNode, org.qmstr.grpc.service.Datamodel.DiagnosticNode.Builder, org.qmstr.grpc.service.Datamodel.DiagnosticNodeOrBuilder> diagnosticInfoBuilder_;
+
+      /**
+       * <code>repeated .service.DiagnosticNode diagnosticInfo = 8;</code>
+       */
+      public java.util.List<org.qmstr.grpc.service.Datamodel.DiagnosticNode> getDiagnosticInfoList() {
+        if (diagnosticInfoBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(diagnosticInfo_);
+        } else {
+          return diagnosticInfoBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .service.DiagnosticNode diagnosticInfo = 8;</code>
+       */
+      public int getDiagnosticInfoCount() {
+        if (diagnosticInfoBuilder_ == null) {
+          return diagnosticInfo_.size();
+        } else {
+          return diagnosticInfoBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .service.DiagnosticNode diagnosticInfo = 8;</code>
+       */
+      public org.qmstr.grpc.service.Datamodel.DiagnosticNode getDiagnosticInfo(int index) {
+        if (diagnosticInfoBuilder_ == null) {
+          return diagnosticInfo_.get(index);
+        } else {
+          return diagnosticInfoBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .service.DiagnosticNode diagnosticInfo = 8;</code>
+       */
+      public Builder setDiagnosticInfo(
+          int index, org.qmstr.grpc.service.Datamodel.DiagnosticNode value) {
+        if (diagnosticInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDiagnosticInfoIsMutable();
+          diagnosticInfo_.set(index, value);
+          onChanged();
+        } else {
+          diagnosticInfoBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .service.DiagnosticNode diagnosticInfo = 8;</code>
+       */
+      public Builder setDiagnosticInfo(
+          int index, org.qmstr.grpc.service.Datamodel.DiagnosticNode.Builder builderForValue) {
+        if (diagnosticInfoBuilder_ == null) {
+          ensureDiagnosticInfoIsMutable();
+          diagnosticInfo_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          diagnosticInfoBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .service.DiagnosticNode diagnosticInfo = 8;</code>
+       */
+      public Builder addDiagnosticInfo(org.qmstr.grpc.service.Datamodel.DiagnosticNode value) {
+        if (diagnosticInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDiagnosticInfoIsMutable();
+          diagnosticInfo_.add(value);
+          onChanged();
+        } else {
+          diagnosticInfoBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .service.DiagnosticNode diagnosticInfo = 8;</code>
+       */
+      public Builder addDiagnosticInfo(
+          int index, org.qmstr.grpc.service.Datamodel.DiagnosticNode value) {
+        if (diagnosticInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDiagnosticInfoIsMutable();
+          diagnosticInfo_.add(index, value);
+          onChanged();
+        } else {
+          diagnosticInfoBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .service.DiagnosticNode diagnosticInfo = 8;</code>
+       */
+      public Builder addDiagnosticInfo(
+          org.qmstr.grpc.service.Datamodel.DiagnosticNode.Builder builderForValue) {
+        if (diagnosticInfoBuilder_ == null) {
+          ensureDiagnosticInfoIsMutable();
+          diagnosticInfo_.add(builderForValue.build());
+          onChanged();
+        } else {
+          diagnosticInfoBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .service.DiagnosticNode diagnosticInfo = 8;</code>
+       */
+      public Builder addDiagnosticInfo(
+          int index, org.qmstr.grpc.service.Datamodel.DiagnosticNode.Builder builderForValue) {
+        if (diagnosticInfoBuilder_ == null) {
+          ensureDiagnosticInfoIsMutable();
+          diagnosticInfo_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          diagnosticInfoBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .service.DiagnosticNode diagnosticInfo = 8;</code>
+       */
+      public Builder addAllDiagnosticInfo(
+          java.lang.Iterable<? extends org.qmstr.grpc.service.Datamodel.DiagnosticNode> values) {
+        if (diagnosticInfoBuilder_ == null) {
+          ensureDiagnosticInfoIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, diagnosticInfo_);
+          onChanged();
+        } else {
+          diagnosticInfoBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .service.DiagnosticNode diagnosticInfo = 8;</code>
+       */
+      public Builder clearDiagnosticInfo() {
+        if (diagnosticInfoBuilder_ == null) {
+          diagnosticInfo_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000040);
+          onChanged();
+        } else {
+          diagnosticInfoBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .service.DiagnosticNode diagnosticInfo = 8;</code>
+       */
+      public Builder removeDiagnosticInfo(int index) {
+        if (diagnosticInfoBuilder_ == null) {
+          ensureDiagnosticInfoIsMutable();
+          diagnosticInfo_.remove(index);
+          onChanged();
+        } else {
+          diagnosticInfoBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .service.DiagnosticNode diagnosticInfo = 8;</code>
+       */
+      public org.qmstr.grpc.service.Datamodel.DiagnosticNode.Builder getDiagnosticInfoBuilder(
+          int index) {
+        return getDiagnosticInfoFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .service.DiagnosticNode diagnosticInfo = 8;</code>
+       */
+      public org.qmstr.grpc.service.Datamodel.DiagnosticNodeOrBuilder getDiagnosticInfoOrBuilder(
+          int index) {
+        if (diagnosticInfoBuilder_ == null) {
+          return diagnosticInfo_.get(index);  } else {
+          return diagnosticInfoBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .service.DiagnosticNode diagnosticInfo = 8;</code>
+       */
+      public java.util.List<? extends org.qmstr.grpc.service.Datamodel.DiagnosticNodeOrBuilder> 
+           getDiagnosticInfoOrBuilderList() {
+        if (diagnosticInfoBuilder_ != null) {
+          return diagnosticInfoBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(diagnosticInfo_);
+        }
+      }
+      /**
+       * <code>repeated .service.DiagnosticNode diagnosticInfo = 8;</code>
+       */
+      public org.qmstr.grpc.service.Datamodel.DiagnosticNode.Builder addDiagnosticInfoBuilder() {
+        return getDiagnosticInfoFieldBuilder().addBuilder(
+            org.qmstr.grpc.service.Datamodel.DiagnosticNode.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .service.DiagnosticNode diagnosticInfo = 8;</code>
+       */
+      public org.qmstr.grpc.service.Datamodel.DiagnosticNode.Builder addDiagnosticInfoBuilder(
+          int index) {
+        return getDiagnosticInfoFieldBuilder().addBuilder(
+            index, org.qmstr.grpc.service.Datamodel.DiagnosticNode.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .service.DiagnosticNode diagnosticInfo = 8;</code>
+       */
+      public java.util.List<org.qmstr.grpc.service.Datamodel.DiagnosticNode.Builder> 
+           getDiagnosticInfoBuilderList() {
+        return getDiagnosticInfoFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.qmstr.grpc.service.Datamodel.DiagnosticNode, org.qmstr.grpc.service.Datamodel.DiagnosticNode.Builder, org.qmstr.grpc.service.Datamodel.DiagnosticNodeOrBuilder> 
+          getDiagnosticInfoFieldBuilder() {
+        if (diagnosticInfoBuilder_ == null) {
+          diagnosticInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              org.qmstr.grpc.service.Datamodel.DiagnosticNode, org.qmstr.grpc.service.Datamodel.DiagnosticNode.Builder, org.qmstr.grpc.service.Datamodel.DiagnosticNodeOrBuilder>(
+                  diagnosticInfo_,
+                  ((bitField0_ & 0x00000040) == 0x00000040),
+                  getParentForChildren(),
+                  isClean());
+          diagnosticInfo_ = null;
+        }
+        return diagnosticInfoBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -9790,6 +11903,11 @@ public final class Datamodel {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_service_InfoNode_DataNode_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_service_DiagnosticNode_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_service_DiagnosticNode_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_service_Analyzer_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -9823,37 +11941,45 @@ public final class Datamodel {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\017datamodel.proto\022\007service\"\241\002\n\010FileNode\022" +
+      "\n\017datamodel.proto\022\007service\"\322\002\n\010FileNode\022" +
       "\013\n\003uid\030\001 \001(\t\022\024\n\014fileNodeType\030\002 \001(\t\022(\n\010fi" +
       "leType\030\003 \001(\0162\026.service.FileNode.Type\022\014\n\004" +
       "path\030\004 \001(\t\022\014\n\004name\030\005 \001(\t\022\014\n\004hash\030\006 \001(\t\022\016" +
       "\n\006broken\030\007 \001(\010\022&\n\013derivedFrom\030\010 \003(\0132\021.se" +
       "rvice.FileNode\022)\n\016additionalInfo\030\t \003(\0132\021" +
-      ".service.InfoNode\";\n\004Type\022\t\n\005UNDEF\020\000\022\n\n\006" +
-      "SOURCE\020\001\022\020\n\014INTERMEDIATE\020\002\022\n\n\006TARGET\020\003\"\346" +
-      "\001\n\010InfoNode\022\013\n\003uid\030\001 \001(\t\022\024\n\014infoNodeType" +
-      "\030\002 \001(\t\022\014\n\004type\030\003 \001(\t\022\027\n\017confidenceScore\030" +
-      "\004 \001(\001\022#\n\010analyzer\030\005 \003(\0132\021.service.Analyz" +
-      "er\022-\n\tdataNodes\030\006 \003(\0132\032.service.InfoNode" +
-      ".DataNode\032<\n\010DataNode\022\024\n\014dataNodeType\030\001 " +
-      "\001(\t\022\014\n\004type\030\002 \001(\t\022\014\n\004data\030\003 \001(\t\"\177\n\010Analy" +
-      "zer\022\013\n\003uid\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\030\n\020analyz" +
-      "erNodeType\030\003 \001(\t\022\022\n\ntrustLevel\030\004 \001(\003\022*\n\007" +
-      "pathSub\030\005 \003(\0132\031.service.PathSubstitution" +
-      "\",\n\020PathSubstitution\022\013\n\003old\030\001 \001(\t\022\013\n\003new" +
-      "\030\002 \001(\t\"\245\001\n\013PackageNode\022\013\n\003uid\030\001 \001(\t\022\014\n\004n" +
-      "ame\030\002 \001(\t\022\027\n\017packageNodeType\030\004 \001(\t\022\"\n\007ta" +
-      "rgets\030\005 \003(\0132\021.service.FileNode\022)\n\016additi" +
-      "onalInfo\030\006 \003(\0132\021.service.InfoNode\022\023\n\013bui" +
-      "ldConfig\030\007 \001(\t\"<\n\005Event\022\"\n\005class\030\001 \001(\0162\023" +
-      ".service.EventClass\022\017\n\007message\030\002 \001(\t\"X\n\016" +
-      "QmstrStateNode\022\013\n\003uid\030\001 \001(\t\022\032\n\022qmstrStat" +
-      "eNodeType\030\002 \001(\t\022\035\n\005phase\030\003 \001(\0162\016.service" +
-      ".Phase*,\n\nEventClass\022\007\n\003ALL\020\000\022\t\n\005PHASE\020\001" +
-      "\022\n\n\006MODULE\020\002*@\n\005Phase\022\010\n\004INIT\020\000\022\t\n\005BUILD" +
-      "\020\001\022\014\n\010ANALYSIS\020\002\022\n\n\006REPORT\020\003\022\010\n\004FAIL\020\004*\'" +
-      "\n\rExceptionType\022\t\n\005ERROR\020\000\022\013\n\007WARNING\020\001B" +
-      "\030\n\026org.qmstr.grpc.serviceb\006proto3"
+      ".service.InfoNode\022/\n\016diagnosticInfo\030\n \003(" +
+      "\0132\027.service.DiagnosticNode\";\n\004Type\022\t\n\005UN" +
+      "DEF\020\000\022\n\n\006SOURCE\020\001\022\020\n\014INTERMEDIATE\020\002\022\n\n\006T" +
+      "ARGET\020\003\"\346\001\n\010InfoNode\022\013\n\003uid\030\001 \001(\t\022\024\n\014inf" +
+      "oNodeType\030\002 \001(\t\022\014\n\004type\030\003 \001(\t\022\027\n\017confide" +
+      "nceScore\030\004 \001(\001\022#\n\010analyzer\030\005 \003(\0132\021.servi" +
+      "ce.Analyzer\022-\n\tdataNodes\030\006 \003(\0132\032.service" +
+      ".InfoNode.DataNode\032<\n\010DataNode\022\024\n\014dataNo" +
+      "deType\030\001 \001(\t\022\014\n\004type\030\002 \001(\t\022\014\n\004data\030\003 \001(\t" +
+      "\"\334\001\n\016DiagnosticNode\022\013\n\003uid\030\001 \001(\t\022\032\n\022diag" +
+      "nosticNodeType\030\002 \001(\t\0222\n\010severity\030\003 \001(\0162 " +
+      ".service.DiagnosticNode.Severity\022\017\n\007mess" +
+      "age\030\004 \001(\t\022#\n\010analyzer\030\005 \003(\0132\021.service.An" +
+      "alyzer\"7\n\010Severity\022\t\n\005UNDEF\020\000\022\010\n\004INFO\020\001\022" +
+      "\013\n\007WARNING\020\002\022\t\n\005ERROR\020\003\"\177\n\010Analyzer\022\013\n\003u" +
+      "id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\030\n\020analyzerNodeTy" +
+      "pe\030\003 \001(\t\022\022\n\ntrustLevel\030\004 \001(\003\022*\n\007pathSub\030" +
+      "\005 \003(\0132\031.service.PathSubstitution\",\n\020Path" +
+      "Substitution\022\013\n\003old\030\001 \001(\t\022\013\n\003new\030\002 \001(\t\"\326" +
+      "\001\n\013PackageNode\022\013\n\003uid\030\001 \001(\t\022\014\n\004name\030\002 \001(" +
+      "\t\022\027\n\017packageNodeType\030\004 \001(\t\022\"\n\007targets\030\005 " +
+      "\003(\0132\021.service.FileNode\022)\n\016additionalInfo" +
+      "\030\006 \003(\0132\021.service.InfoNode\022\023\n\013buildConfig" +
+      "\030\007 \001(\t\022/\n\016diagnosticInfo\030\010 \003(\0132\027.service" +
+      ".DiagnosticNode\"<\n\005Event\022\"\n\005class\030\001 \001(\0162" +
+      "\023.service.EventClass\022\017\n\007message\030\002 \001(\t\"X\n" +
+      "\016QmstrStateNode\022\013\n\003uid\030\001 \001(\t\022\032\n\022qmstrSta" +
+      "teNodeType\030\002 \001(\t\022\035\n\005phase\030\003 \001(\0162\016.servic" +
+      "e.Phase*,\n\nEventClass\022\007\n\003ALL\020\000\022\t\n\005PHASE\020" +
+      "\001\022\n\n\006MODULE\020\002*@\n\005Phase\022\010\n\004INIT\020\000\022\t\n\005BUIL" +
+      "D\020\001\022\014\n\010ANALYSIS\020\002\022\n\n\006REPORT\020\003\022\010\n\004FAIL\020\004*" +
+      "\'\n\rExceptionType\022\t\n\005ERROR\020\000\022\013\n\007WARNING\020\001" +
+      "B\030\n\026org.qmstr.grpc.serviceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -9872,7 +11998,7 @@ public final class Datamodel {
     internal_static_service_FileNode_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_service_FileNode_descriptor,
-        new java.lang.String[] { "Uid", "FileNodeType", "FileType", "Path", "Name", "Hash", "Broken", "DerivedFrom", "AdditionalInfo", });
+        new java.lang.String[] { "Uid", "FileNodeType", "FileType", "Path", "Name", "Hash", "Broken", "DerivedFrom", "AdditionalInfo", "DiagnosticInfo", });
     internal_static_service_InfoNode_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_service_InfoNode_fieldAccessorTable = new
@@ -9885,32 +12011,38 @@ public final class Datamodel {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_service_InfoNode_DataNode_descriptor,
         new java.lang.String[] { "DataNodeType", "Type", "Data", });
-    internal_static_service_Analyzer_descriptor =
+    internal_static_service_DiagnosticNode_descriptor =
       getDescriptor().getMessageTypes().get(2);
+    internal_static_service_DiagnosticNode_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_service_DiagnosticNode_descriptor,
+        new java.lang.String[] { "Uid", "DiagnosticNodeType", "Severity", "Message", "Analyzer", });
+    internal_static_service_Analyzer_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_service_Analyzer_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_service_Analyzer_descriptor,
         new java.lang.String[] { "Uid", "Name", "AnalyzerNodeType", "TrustLevel", "PathSub", });
     internal_static_service_PathSubstitution_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_service_PathSubstitution_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_service_PathSubstitution_descriptor,
         new java.lang.String[] { "Old", "New", });
     internal_static_service_PackageNode_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_service_PackageNode_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_service_PackageNode_descriptor,
-        new java.lang.String[] { "Uid", "Name", "PackageNodeType", "Targets", "AdditionalInfo", "BuildConfig", });
+        new java.lang.String[] { "Uid", "Name", "PackageNodeType", "Targets", "AdditionalInfo", "BuildConfig", "DiagnosticInfo", });
     internal_static_service_Event_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_service_Event_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_service_Event_descriptor,
         new java.lang.String[] { "Class_", "Message", });
     internal_static_service_QmstrStateNode_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_service_QmstrStateNode_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_service_QmstrStateNode_descriptor,
